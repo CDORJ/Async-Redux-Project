@@ -1,12 +1,12 @@
-import React from 'react'
-import EnderBooks from './components/EnderBooks'
-import './App.css';
+import React from "react";
+import "./App.css";
+import GiphyCard from "./components/GiphyCard";
 
 function App() {
   return (
     <div>
-      <h1>Ender's Game</h1>
-      <EnderBooks />
+      <h1>Random GIFs</h1>
+      <GiphyCard />
     </div>
   );
 }

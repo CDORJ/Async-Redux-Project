@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { endersGameReducer as EGR } from './endersGameReducer';
+import { giphyReducer as GR } from './giphyReducer';
 
 export default combineReducers({
-   EGR,
+   GR,
 })
