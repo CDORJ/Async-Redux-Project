@@ -5,10 +5,7 @@ import {
 } from "../actions";
 
 const initialState = {
-  gif: {
-    img: "",
-    title: "",
-  },
+  gif: [],
   isLoading: false,
   error: "",
 };

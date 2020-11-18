@@ -1,30 +1,40 @@
 import React from "react";
-import { ClipLoader } from 'react-spinners'
+import { ClipLoader } from "react-spinners";
 import { connect } from "react-redux";
 
-const GiphyCard= (props) => {
+const GiphyCard = (props) => {
+  console.log("props from GiphyCard", props);
 
   return (
     <div>
       {props.isLoading ? (
-      <ClipLoader/>
-      ) : (props.error ? <div style={{color: 'red'}}>{props.error}</div> : 
-      <>
-      <div>{props.gif.title}</div>
-      <img src={props.gif.img} alt="GIF"/>
-      </>
+        <ClipLoader />
+      ) : props.error ? (
+        <div style={{ color: "red" }}>{props.error}</div>
+      ) : (
+        <>
+          {props.gif.map((item) => {
+            return (
+              <div>
+                {item.title}
+                <img src={item.images["480w_still"]["url"]} alt="GIF" />
+              </div>
+            );
+          })}
+
+          {/*  */}
+        </>
       )}
-
     </div>
-  
-  )}
+  );
+};
 
-const mapStateToProps = ({GR}) => {
+const mapStateToProps = ({ GR }) => {
   return {
     gif: GR.gif,
     isLoading: GR.isLoading,
-    error: GR.error
-  }
-}
+    error: GR.error,
+  };
+};
 
 export default connect(mapStateToProps, {})(GiphyCard);
