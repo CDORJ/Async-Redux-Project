@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap'
 import { connect } from 'react-redux';
 
 import { fetchData } from '../store/actions'
 
 const MainDiv = styled.div`
-width: 200px;
-display: flex;
+width: 300px;
+display: inline-flex;
 flex-direction: column;
 justify-content: center;
 text-align: center;
@@ -14,7 +15,7 @@ text-align: center;
 
 const SearchNumGif = (props) => {
 
-    const [gifNumber, setGifNumber] = useState(4)
+    const [gifNumber, setGifNumber] = useState()
 
   const handleChange = (e) => {
     setGifNumber(e.target.value)
@@ -27,9 +28,9 @@ const SearchNumGif = (props) => {
 
   return (
   <MainDiv>
-      <label htmlFor='gif'>How Many Gifs ?</label>
+      <label htmlFor='gif'>How Many Gifs Would You Like to See ?</label>
       <input id="gif" value={gifNumber} onChange={handleChange} />
-      <button onClick={handleClick}>Click to See Gifs</button>
+      <Button onClick={handleClick}>Click to See Gifs</Button>
   </MainDiv>
   );
 };

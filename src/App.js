@@ -5,7 +5,7 @@ import SearchNumGif from "./components/SearchNumGif";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1>Random GIFs</h1>
       <SearchNumGif />
       <GiphyCard />
